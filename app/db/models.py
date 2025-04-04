@@ -9,7 +9,7 @@ class Link(Base):
     id = Column(Integer, primary_key=True, index=True)
     original_url = Column(String(2048), nullable=False)
     short_code = Column(String(16), unique=True, index=True)
-    created_at = Column(DateTime, default=datetime.utcnow)
+    created_at = Column(DateTime, default=datetime.now())
 
 
 class Click(Base):
