@@ -1,9 +1,5 @@
 import os
 from pydantic.v1 import BaseSettings
-from dotenv import load_dotenv
-
-env_path = "app/.env"
-load_dotenv(env_path)
 
 class Settings(BaseSettings):
     PROJECT_NAME: str = "URL Shortener"
