@@ -2,3 +2,5 @@ fastapi[standard]~=0.115.12
 sqlalchemy~=2.0.40
 pydantic~=2.11.2
 python-dotenv~=1.1.0
+alembic~=1.15.2
+aiosqlite~=0.21.0
