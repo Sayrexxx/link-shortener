@@ -6,7 +6,12 @@ class Settings(BaseSettings):
     DATABASE_URL: str
     SECRET_KEY: str
     BASE_URL: str
-    class Config:
+    REDIS_HOST: str = "localhost"
+    REDIS_PORT: int = 6379
+    REDIS_TTL: int = 86400
+
+    
+class Config:
         env_file = ".env"
 
 settings = Settings()
