@@ -22,7 +22,7 @@ class LinkService:
             self,
             original_url: str,
             custom_code: Optional[str] = None,
-            db: AsyncSession = AsyncSession
+            db: AsyncSession = None
     ) -> Link:
         """
         Creates a shortened link with caching.
