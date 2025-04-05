@@ -23,7 +23,7 @@ async def redirect(code: str, request: Request):
         click = Click(
             link_id=link.id,
             clicked_at=datetime.utcnow(),
-            ip_address=request.client.host,
+            ip_address=request.headers.get("x-forwarded-for", request.client.host),
             user_agent=request.headers.get("user-agent")
         )
         db.add(click)
