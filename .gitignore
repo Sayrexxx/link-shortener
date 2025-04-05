@@ -8,3 +8,4 @@ __pycache__/
 .DS_Store
 *.db
 app/migrations/*
+url_shortener.egg-info/*
