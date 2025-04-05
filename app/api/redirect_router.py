@@ -29,4 +29,4 @@ async def redirect(code: str, request: Request):
         db.add(click)
         await db.commit()
 
-        return RedirectResponse(url=link.original_url, status_code=301)
+        return RedirectResponse(url=link.original_url, status_code=302)
