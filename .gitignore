@@ -1,8 +1,10 @@
 .venv/
 .idea/
 __pycache__/
-app/.env
+.env
 *.pyc
 *.pyo
 *.pyd
 .DS_Store
+*.db
+app/migrations/*

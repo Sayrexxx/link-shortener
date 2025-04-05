@@ -7,6 +7,6 @@ class Settings(BaseSettings):
     SECRET_KEY: str
     BASE_URL: str
     class Config:
-        env_file = "app/.env"
+        env_file = ".env"
 
 settings = Settings()
