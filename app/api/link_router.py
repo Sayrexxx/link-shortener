@@ -52,8 +52,8 @@ async def get_link_stats(
         )
         .where(Click.link_id == link.id)
         .where(Click.clicked_at >= thirty_days_ago)
-        .group_by("day")
-        .order_by("day")
+        .group_by("date")
+        .order_by("date")
     )
 
     geo_data = await db.execute(
