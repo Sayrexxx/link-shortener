@@ -19,3 +19,5 @@ class Click(Base):
     clicked_at = Column(DateTime, default=datetime.utcnow)
     ip_address = Column(String(45))
     user_agent = Column(String(512))
+    country_code = Column(String(2))
+    referrer = Column(String(512))
