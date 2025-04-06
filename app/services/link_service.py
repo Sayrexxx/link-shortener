@@ -4,9 +4,11 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 import redis.asyncio as redis
 from app.db.models import Link
+from app.db.session import get_db
 from app.services.validation import URLValidator
 from app.services.code_generator import CodeGenerator
 from app.core.config import settings
+from fastapi import Depends
 
 
 class LinkService:
@@ -22,7 +24,7 @@ class LinkService:
             self,
             original_url: str,
             custom_code: Optional[str] = None,
-            db: AsyncSession = None
+            db: AsyncSession = Depends(get_db)
     ) -> Link:
         """
         Creates a shortened link with caching.
