@@ -38,9 +38,10 @@ async def get_link_stats(
         code: str,
         db: AsyncSession = Depends(get_db),
 ):
-    link = await db.execute(
+    result = await db.execute(
         select(Link).where(Link.short_code == code)
     )
+    link = result.scalar()
     if not link.scalar():
         raise HTTPException(status_code=404, detail="Link not found")
     thirty_days_ago = datetime.now() - timedelta(days=30)
