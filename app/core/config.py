@@ -9,6 +9,9 @@ class Settings(BaseSettings):
     REDIS_HOST: str = "localhost"
     REDIS_PORT: int = 6379
     REDIS_TTL: int = 86400
+    RATE_LIMITS = {
+        'stats_endpoint': '10/minute'
+    }
 
     
 class Config:
