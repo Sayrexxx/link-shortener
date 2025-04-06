@@ -42,7 +42,7 @@ async def get_link_stats(
         select(Link).where(Link.short_code == code)
     )
     link = result.scalar()
-    if not link.scalar():
+    if not link:
         raise HTTPException(status_code=404, detail="Link not found")
     thirty_days_ago = datetime.now() - timedelta(days=30)
 
