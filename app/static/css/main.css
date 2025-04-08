@@ -1,0 +1,28 @@
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.5;
+}
+
+.nav-link {
+    @apply text-gray-600 hover:text-gray-900 transition-colors;
+}
+
+input:invalid {
+    @apply border-red-500;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
+
+@media (max-width: 640px) {
+    header {
+        @apply py-4;
+    }
+    nav ul {
+        @apply space-x-4;
+    }
+}
